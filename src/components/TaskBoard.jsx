@@ -68,7 +68,6 @@ function TaskBoard({ name, tasks, customClass }) {
 
     useEffect(() => {
         setEditingTask(taskToEdit);
-        console.log(taskToEdit)
     }, [taskToEdit]);
 
 
@@ -126,7 +125,6 @@ function TaskBoard({ name, tasks, customClass }) {
     };
 
     const updateEditedTask = () => {
-        console.log(editingTask);
         dispatch(updateTask({ email: user.email, id: editingTask.id, ...editingTask }));
         toast.success("Task updated successfully!")
         const modal = document.getElementById('editTaskModal');

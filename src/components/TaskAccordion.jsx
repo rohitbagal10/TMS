@@ -61,6 +61,20 @@ const TaskAccordion = ({ name, tasks, bg, isAddtaskVisible, setSelectedTasks, cl
     const addNewTask = () => {
         const timestamp = new Date().toISOString().replace(/[^\d]/g, "").slice(0, -3);
         const newTask = { ...task, id: timestamp };
+        const { name, category, dueDate, status } = newTask;
+        if (!name) {
+            toast.error("Task name is required")
+            return;
+        } else if (!dueDate) {
+            toast.error("Task due date is required")
+            return;
+        } else if (!status) {
+            toast.error("Task status is required")
+            return;
+        } else if (!category) {
+            toast.error("Task category is required")
+            return;
+        }
         dispatch(addTask({ email: user.email, task: newTask }));
         toast.success("Task added successfully!")
         cancelAddingTask();
@@ -367,21 +381,21 @@ const TaskAccordion = ({ name, tasks, bg, isAddtaskVisible, setSelectedTasks, cl
                                 </colgroup>
                                 <tbody>
                                     {tasks.map((task) => (
-                                            <tr className="custom-table-row border-bottom">
-                                                <td className="d-flex align-items-center">
-                                                    <input className="form-check-input task-checkbox" type="checkbox" value={task.id} checked={selectedTasks.some(selectedTask => selectedTask.id === task.id)} onChange={(e) => checkBoxChange(task, e.target.checked)} />
-                                                    <div className="d-flex align-items-center ms-2">
-                                                        <div>
-                                                            <i className="bi bi-three-dots-vertical text-secondary m-0 p-0"></i>
-                                                        </div>
-                                                        <div className="custom-v-dots">
-                                                            <i className="bi bi-three-dots-vertical text-secondary ms-n1"></i>
-                                                        </div>
+                                        <tr className="custom-table-row border-bottom">
+                                            <td className="d-flex align-items-center">
+                                                <input className="form-check-input task-checkbox" type="checkbox" value={task.id} checked={selectedTasks.some(selectedTask => selectedTask.id === task.id)} onChange={(e) => checkBoxChange(task, e.target.checked)} />
+                                                <div className="d-flex align-items-center ms-2">
+                                                    <div>
+                                                        <i className="bi bi-three-dots-vertical text-secondary m-0 p-0"></i>
                                                     </div>
-                                                    <i className={`bi bi-check-circle-fill custom-check-circle ${task.status === 'COMPLETED' ? 'text-success' : ''}`}></i>
-                                                    <div className="ms-2">{task.status === 'COMPLETED' ? <span className="text-decoration-line-through">{task.name}</span> : <span>{task.name}</span>}</div>
-                                                </td>
-                                            </tr>
+                                                    <div className="custom-v-dots">
+                                                        <i className="bi bi-three-dots-vertical text-secondary ms-n1"></i>
+                                                    </div>
+                                                </div>
+                                                <i className={`bi bi-check-circle-fill custom-check-circle ${task.status === 'COMPLETED' ? 'text-success' : ''}`}></i>
+                                                <div className="ms-2">{task.status === 'COMPLETED' ? <span className="text-decoration-line-through">{task.name}</span> : <span>{task.name}</span>}</div>
+                                            </td>
+                                        </tr>
                                     ))}
                                 </tbody>
                             </table>

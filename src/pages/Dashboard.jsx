@@ -102,7 +102,6 @@ function Dashboard() {
     useEffect(() => {
         if (!tasks) return;
         let filteredTasks = tasks;
-        console.log(tasks);
         if (selectedCategory) {
             filteredTasks = filteredTasks.filter(task => task.category === selectedCategory);
         }

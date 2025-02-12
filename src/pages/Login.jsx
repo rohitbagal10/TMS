@@ -17,7 +17,6 @@ function Login() {
         try {
             const result = await signInWithPopup(auth, provider);
             if (result.user) {
-                console.log(result.user)
                 dispatch(setUser(result.user))
                 navigate('/dashboard')
                 toast.success("Login Successful!!!")
