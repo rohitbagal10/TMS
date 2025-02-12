@@ -1,0 +1,165 @@
+.custom-table-row:hover {
+    cursor: pointer;
+    background-color: light;
+}
+
+.custom-board-item {
+    height: 465px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa transparent;
+}
+
+.custom-task-board {
+    background-color: #F1F1F1;
+    border-radius: 12px;
+}
+
+.custom-board-item::-webkit-scrollbar {
+    width: 2px;
+}
+
+.custom-board-item::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.custom-board-item::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-board-item:has(.card:nth-child(-n+4))::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-board-item:has(.card:nth-child(-n+4)) {
+    scrollbar-width: none;
+}
+
+
+.custom-Todo {
+    background-color: #FAC3FF !important;
+    border: none;
+    color: black;
+}
+
+.custom-Todo:hover {
+    background-color: #FAC3FF !important;
+    color: black;
+}
+
+.custom-Todo:focus,
+.custom-Todo:active {
+    background-color: #FAC3FF !important;
+    color: black;
+    box-shadow: none;
+}
+
+.custom-inprogress {
+    background-color: #85D9F1 !important;
+    border: none;
+    color: black;
+}
+
+.custom-inprogress:hover {
+    background-color: #85D9F1 !important;
+    color: black;
+}
+
+.custom-inprogress:focus,
+.custom-inprogress:active {
+    background-color: #85D9F1 !important;
+    color: black;
+    box-shadow: none;
+}
+
+.custom-completed {
+    background-color: #A2D6A0 !important;
+    border: none;
+    color: black;
+}
+
+.custom-completed:hover {
+    background-color: #A2D6A0 !important;
+    color: black;
+}
+
+.custom-completed:focus,
+.custom-completed:active {
+    background-color: #A2D6A0 !important;
+    color: black;
+    box-shadow: none;
+}
+
+.addtask-btn {
+    color: #ffffff !important;
+    border-radius: 41px;
+    background-color: #7B1984;
+    border: none;
+}
+
+.addtask-btn:hover,
+.addtask-btn:focus,
+.addtask-btn:active {
+    background-color: #7B1984 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    border: none;
+}
+
+.addtask-btn:hover {
+    transform: scale(1.01);
+}
+
+.custom-category-buttons {
+    border-radius: 41px;
+}
+
+.modal-create-button {
+    color: #ffffff !important;
+    border-radius: 41px;
+    background-color: #7B1984;
+    border: none;
+}
+
+.modal-create-button:hover,
+.modal-create-button:focus,
+.modal-create-button:active {
+    background-color: #7B1984 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    border: none;
+}
+
+.modal-cancel-button{
+    border-radius: 41px;
+}
+
+.user-photo{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+
+.custom-smiley{
+   height: 15rem;
+}
+
+.selected-task-div{
+    background-color: #f8f9fa; 
+    padding: 1rem; 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    z-index: 1000;
+    width: 27rem;
+    height: 5rem;
+}
+
+.custom-button-br{
+    border-radius: 12px;
+}
+
+.activity-bg{
+    background-color: #F1F1F1;
+}
